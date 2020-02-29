@@ -90,6 +90,4 @@ const addListenerFromPopup = () => {
 };
 
 
-window.onload = () => {
-  addListenerFromPopup();
-};
+addListenerFromPopup();
