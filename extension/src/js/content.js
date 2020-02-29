@@ -2,7 +2,7 @@ const exe = () => {
   console.log('[start]eat virus');
 
   // 末端の要素のtextを置換
-  const body = document.body;
+  const { body } = document;
   getChildrenAndReplace(body);
 
   // 全部置換しても大丈夫そうな要素
@@ -13,30 +13,45 @@ const exe = () => {
   replaceByTagName('h4');
   // replaceByTagName('a');
   // replaceByTagName('p');
-
+  replaceImg();
   console.log('[end]eat virus');
 };
+
+const replaceImg = () => {
+  const imgs = document.getElementsByTagName('img');
+  for (const img of imgs) {
+    img.src = getImgUrl();
+  }
+  const sources = document.getElementsByTagName('source');
+  for (const source of sources) {
+    source.srcset = getImgUrl();
+  }
+};
+const getImgUrl = () => {
+  return chrome.extension.getURL('cat' + randRange(1,5).toString() + '.jpg');
+}
+// https://qiita.com/uto-usui/items/7193db237175ba15aaa3
+const randRange = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
 const replaceByTagName = (tag) => {
   const elements = document.getElementsByTagName(tag);
   for (const element of elements) {
     replaceText(element);
   }
-
-}
+};
 const getChildrenAndReplace = (node) => {
   console.log(node);
   if (node.children.length === 0) {
     replaceText(node);
   } else {
-    const children = node.children;
+    const { children } = node;
     for (const child of children) {
-      getChildrenAndReplace(child)
+      getChildrenAndReplace(child);
     }
   }
-}
+};
 
-const replaceText = (e) =>{
+const replaceText = (e) => {
   // 末尾nodeだけ
   if (e.textContent) {
     let text = e.textContent;
@@ -53,10 +68,7 @@ const replaceText = (e) =>{
     console.log(text);
     e.textContent = text;
   }
-}
-
-
-
+};
 
 
 // popupからのmessage
