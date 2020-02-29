@@ -6,6 +6,14 @@ const exe = () => {
   const body = document.body;
   getChildrenAndReplace(body);
 
+  // 全部置換しても大丈夫そうな要素
+  replaceByTagName('span');
+  replaceByTagName('h1');
+  replaceByTagName('h2');
+  replaceByTagName('h3');
+  replaceByTagName('h4');
+  replaceByTagName('a');
+
   // const spans = document.getElementsByTagName('span');
   // for (const span of spans) {
   //   replaceText(span);
@@ -17,7 +25,13 @@ const exe = () => {
   console.log('[end]eat virus');
 };
 
+const replaceByTagName = (tag) => {
+  const elements = document.getElementsByTagName(tag);
+  for (const element of elements) {
+    replaceText(element);
+  }
 
+}
 const getChildrenAndReplace = (node) => {
   console.log(node);
   if (node.children.length === 0) {
