@@ -15,7 +15,7 @@ module.exports = {
   },
   rules: {
     // "no-console": "off",
-    // "no-use-before-define": "off",
+    "no-use-before-define": "off",
     semi: [2, "always"]
   },
 };
