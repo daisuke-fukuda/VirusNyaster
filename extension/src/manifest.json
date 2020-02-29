@@ -1,5 +1,5 @@
 {
-  "name": "Chrome Extension Webpack",
+  "name": "VirusNyaster",
   "options_page": "options.html",
   "background": {
     "page": "background.html"
