@@ -1,4 +1,3 @@
-
 const exe = () => {
   console.log('[start]eat virus');
 
@@ -15,14 +14,6 @@ const exe = () => {
   // replaceByTagName('a');
   // replaceByTagName('p');
 
-  // const spans = document.getElementsByTagName('span');
-  // for (const span of spans) {
-  //   replaceText(span);
-  // }
-  // const divs = document.getElementsByTagName('div');
-  // for (const div of divs) {
-  //   replaceText(div);
-  // }
   console.log('[end]eat virus');
 };
 
@@ -57,6 +48,8 @@ const replaceText = (e) =>{
     text = text.replace(/死亡/g, '😺可愛い');
     text = text.replace(/死亡/g, '🐈好き');
     text = text.replace(/感染/g, '猫好き');
+    text = text.replace(/トイレットペーパー/g, 'キャットフード');
+    text = text.replace(/マスク/g, 'またたび');
     console.log(text);
     e.textContent = text;
   }
