@@ -11,6 +11,7 @@
       "38": "icon-38.png"
     }
   },
+  "permissions": ["activeTab"],
   "content_scripts": [
     {
       "matches": [
