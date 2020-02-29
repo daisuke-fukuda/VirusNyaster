@@ -12,7 +12,8 @@ const exe = () => {
   replaceByTagName('h2');
   replaceByTagName('h3');
   replaceByTagName('h4');
-  replaceByTagName('a');
+  // replaceByTagName('a');
+  // replaceByTagName('p');
 
   // const spans = document.getElementsByTagName('span');
   // for (const span of spans) {
@@ -46,17 +47,23 @@ const getChildrenAndReplace = (node) => {
 
 const replaceText = (e) =>{
   // 末尾nodeだけ
-  if (e.textContent && e.children.length === 0) {
+  if (e.textContent) {
     let text = e.textContent;
-    text = text.replace('コロナウイルス', '猫ちゃん');
-    text = text.replace('コロナ', '子猫');
-    text = text.replace('ウイルス', '🐈');
-    text = text.replace('新型', '今までより可愛い');
-    text = text.replace('死亡', '大好き');
+    text = text.replace(/コロナウイルス/g, '猫ちゃん');
+    text = text.replace(/コロナ/g, '子猫');
+    text = text.replace(/ウイルス/g, '🐈');
+    text = text.replace(/肺炎/g, '肉球');
+    text = text.replace(/新型/g, '今までより可愛い');
+    text = text.replace(/死亡/g, '😺可愛い');
+    text = text.replace(/死亡/g, '🐈好き');
+    text = text.replace(/感染/g, '猫好き');
     console.log(text);
     e.textContent = text;
   }
 }
+
+
+
 
 
 // popupからのmessage
