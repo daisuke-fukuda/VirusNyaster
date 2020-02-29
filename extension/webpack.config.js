@@ -70,10 +70,10 @@ const options = {
           }));
         },
       },
-      {
-        copyUnmodified: true, // https://github.com/samuelsimoes/chrome-extension-webpack-boilerplate/issues/71
-      },
-    ]),
+    ],
+    {
+      copyUnmodified: true, // https://github.com/samuelsimoes/chrome-extension-webpack-boilerplate/issues/71
+    }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'popup.html'),
       filename: 'popup.html',
