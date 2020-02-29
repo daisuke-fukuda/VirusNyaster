@@ -3,17 +3,18 @@ const exe = () => {
   console.log('[start]eat virus');
 
   // 末端の要素のtextを置換
-  const { body } = document;
-  getChildrenAndReplace(body);
+  // const { body } = document;
+  // getChildrenAndReplace(body);
 
   // 全部置換しても大丈夫そうな要素
-  replaceByTagName('span');
-  replaceByTagName('h1');
-  replaceByTagName('h2');
-  replaceByTagName('h3');
-  replaceByTagName('h4');
+  // replaceByTagName('span');
+  // replaceByTagName('h1');
+  // replaceByTagName('h2');
+  // replaceByTagName('h3');
+  // replaceByTagName('h4');
   // replaceByTagName('a');
   // replaceByTagName('p');
+  replaceByTagName('div');
   replaceImg();
   // eslint-disable-next-line no-console
   console.log('[end]eat virus');
@@ -56,8 +57,8 @@ const getChildrenAndReplace = (node) => {
 
 const replaceText = (e) => {
   // 末尾nodeだけ
-  if (e.textContent) {
-    let text = e.textContent;
+  if (e.innerHTML) {
+    let text = e.innerHTML;
     text = text.replace(/コロナウイルス/g, '猫ちゃん');
     text = text.replace(/コロナ/g, '子猫');
     text = text.replace(/ウイルス/g, '🐈');
@@ -65,11 +66,20 @@ const replaceText = (e) => {
     text = text.replace(/新型/g, '今までより可愛い');
     text = text.replace(/死亡/g, '😺可愛い');
     text = text.replace(/死者/g, '🐈好き');
+    text = text.replace(/無くなった/g, '🐈好きになった');
+    text = text.replace(/感染者/g, '猫好きな人');
     text = text.replace(/感染/g, '猫好き');
     text = text.replace(/トイレットペーパー/g, 'キャットフード');
+    text = text.replace(/ティッシュペーパー/g, 'カリカリ');
     text = text.replace(/マスク/g, 'またたび');
     text = text.replace(/重篤/g, '猫しか見えない');
-    e.textContent = text;
+    text = text.replace(/患者/g, 'ネコ好き');
+    text = text.replace(/重体/g, '重度の猫好き');
+    text = text.replace(/軽症/g, '猫が気になってきて');
+    text = text.replace(/意識不明/g, '可愛すぎて');
+    text = text.replace(/濃厚接触した/g, 'ネコとべたべた');
+    text = text.replace(/接触/g, 'ネコにもふもふ');
+    e.innerHTML = text;
   }
 };
 
