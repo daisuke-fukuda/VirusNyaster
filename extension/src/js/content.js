@@ -61,10 +61,11 @@ const replaceText = (e) => {
     text = text.replace(/肺炎/g, '肉球');
     text = text.replace(/新型/g, '今までより可愛い');
     text = text.replace(/死亡/g, '😺可愛い');
-    text = text.replace(/死亡/g, '🐈好き');
+    text = text.replace(/死者/g, '🐈好き');
     text = text.replace(/感染/g, '猫好き');
     text = text.replace(/トイレットペーパー/g, 'キャットフード');
     text = text.replace(/マスク/g, 'またたび');
+    text = text.replace(/重篤/g, '猫しか見えない');
     console.log(text);
     e.textContent = text;
   }
